@@ -1,5 +1,5 @@
 {% set name = "rpaframework" %}
-{% set version = "7.0.0" %}
+{% set version = "7.2.0" %}
 
 
 package:
@@ -8,11 +8,11 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/rpaframework-{{ version }}.tar.gz
-  sha256: b93663b620e70550f7eb92380ceba0612dc99e500cf4efb3d8e004ecd388bcf8
+  sha256: af4add4757ac99a3172b340bcd2e4292ad02546dcec24582462047bb73bf667a
 
 build:
   number: 0
-  skip: true   # [py>=40 or py2k]
+  skip: true  # [py>=40 or py2k]
   entry_points:
     - rpa-google-oauth = RPA.scripts.google_authenticate:start
   script: {{ PYTHON }} -m pip install . -vv
