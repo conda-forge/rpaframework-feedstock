@@ -64,12 +64,12 @@ test:
   imports:
     - RPA
     - RPA.Browser
-  commands:
-    - pip check  # [linux]
+  # commands:
+    # - pip check  # [linux]
     # google-oauth is optional dependency, script fails if it's not installed
     # - rpa-google-oauth --help
-  requires:
-    - pip
+  # requires:
+  #   - pip
 
 about:
   home: https://rpaframework.org/
