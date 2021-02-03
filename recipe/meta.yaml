@@ -24,6 +24,7 @@ requirements:
   run:
     - cryptography >=2.9.2,<3.0.0
     - dataclasses >=0.7,<0.8  # [py>=36 and py<37]
+    - importlib_resources  # [py<=38]
     - docutils
     - exchangelib >=3.1.1,<4.0.0
     - fpdf >=1.7.2,<2.0.0
