@@ -1,6 +1,5 @@
 {% set name = "rpaframework" %}
-{% set version = "7.0.0" %}
-
+{% set version = "7.4.1" %}
 
 package:
   name: {{ name|lower }}
@@ -8,11 +7,11 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/rpaframework-{{ version }}.tar.gz
-  sha256: b93663b620e70550f7eb92380ceba0612dc99e500cf4efb3d8e004ecd388bcf8
+  sha256: 7e4f0109ccbf14fe75e8b11e199aa14005aacfd9ede60a938791b7a573a40f83
 
 build:
   number: 0
-  skip: true   # [py>=40 or py2k]
+  skip: true  # [py>=40 or py2k]
   entry_points:
     - rpa-google-oauth = RPA.scripts.google_authenticate:start
   script: {{ PYTHON }} -m pip install . -vv
@@ -25,6 +24,7 @@ requirements:
   run:
     - cryptography >=2.9.2,<3.0.0
     - dataclasses >=0.7,<0.8  # [py>=36 and py<37]
+    - importlib_resources  # [py<=38]
     - docutils
     - exchangelib >=3.1.1,<4.0.0
     - fpdf >=1.7.2,<2.0.0
@@ -61,15 +61,22 @@ requirements:
     - xlwt >=1.3.0,<2.0.0
 
 test:
+  source_files:
+    - tests
   imports:
     - RPA
     - RPA.Browser
   commands:
-    - pip check  # [linux]
+    - pytest -k "not browser and not pdf" tests/
+    # - pip check  # [linux]
     # google-oauth is optional dependency, script fails if it's not installed
     # - rpa-google-oauth --help
   requires:
     - pip
+    - mock >=2
+    - pytest >=3.4,!=3.10.0
+    - pytest-mock >=1.8
+    - pytest-cov
 
 about:
   home: https://rpaframework.org/
