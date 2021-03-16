@@ -1,6 +1,7 @@
 {% set name = "rpaframework" %}
 {% set version = "8.0.0" %}
 
+
 package:
   name: {{ name|lower }}
   version: {{ version }}
