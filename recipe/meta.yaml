@@ -10,7 +10,7 @@ source:
   sha256: f1ca1071b892adf080ebae095b41d47dda59b17459cf0a50fa1f5a5cf2102e9c
 
 build:
-  number: 0
+  number: 1
   skip: true  # [py>=40 or py2k]
   entry_points:
     - rpa-google-oauth = RPA.scripts.google_authenticate:start
@@ -41,7 +41,7 @@ requirements:
     - python-xlib >=0.17  # [linux]
     - pywin32 >=227,<228  # [py>=37 and win]
     - pywinauto >=0.6.8,<0.7.0  # [py<37 and win or py>37 and py<38 and win or py>38 and win]
-    - robotframework >=3.2.2,<4.0.0
+    - robotframework >=4.0.0,<5.0.0
     - robotframework-pythonlibcore >=2.1.0,<3.0.0
     - robotframework-requests >=0.7.0,<0.8.0
     - robotframework-sapguilibrary >=1.1,<2.0  # [win]
