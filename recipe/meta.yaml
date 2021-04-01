@@ -1,5 +1,5 @@
 {% set name = "rpaframework" %}
-{% set version = "9.3.1" %}
+{% set version = "9.3.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/rpaframework-{{ version }}.tar.gz
-  sha256: fc4e9bdb7b5b750d97fc9489b0bfab11f96873238a031cca4d7a14d1625f4969
+  sha256: 5752ea912387196cd52f1fec09250161a41ff79f02af485a4a985484ea5dfdc6
 
 build:
   number: 0
