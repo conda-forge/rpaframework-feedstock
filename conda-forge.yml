@@ -1,4 +1,4 @@
 conda_forge_output_validation: true
 channel_priority: false
 bot:
-  automerge: true
+  automerge: false
