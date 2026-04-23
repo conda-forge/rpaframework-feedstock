@@ -6,11 +6,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/rpaframework-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/rpaframework-{{ version }}.tar.gz
   sha256: 1eb6f1b1d2fb27b8fbb4f0d7e198da02fba9f9b047352018113fbe308227f833
 
 build:
-  number: 0
+  number: 1
   skip: true  # [py>=40 or py2k]
   entry_points:
     - rpa-google-oauth = RPA.scripts.google_authenticate:start
